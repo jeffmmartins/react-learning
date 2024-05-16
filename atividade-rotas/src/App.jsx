@@ -1,6 +1,8 @@
 import Home from './routes/Home';
-import {BrowserRouter, Router, Routes} from 'react-router-dom'
+import {BrowserRouter, Routes} from 'react-router-dom'
 import './App.css';
+import Company from './routes/Company';
+import Customer from './routes/Customer';
 
 function App() {
    const membros = [
@@ -34,12 +36,11 @@ function App() {
   return (
     <div className="App">
       <Home membros={membros}/>
-      <BrowserRouter>
-      
-        <Routes path="/customer/:id"/>
-        <Routes path="/company/:id"/>
+     
+        <Routes path="/customer/:id" element={<Customer/>}/>
+        <Routes path="/company/:id" element={<Company/>}/>
         <Routes path="/"/>
-      </BrowserRouter>
+      
     </div>
   );
 }
