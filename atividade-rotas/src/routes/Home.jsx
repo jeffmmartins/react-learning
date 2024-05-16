@@ -1,24 +1,20 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Home = ({membros}) => {
-    const navigate = useNavigate();
-
-    const handleclick = () => {
-      navigate('/company')
-    }
+const Home = ({members}) => {
+    
   return (
     <div>
-      {membros.map((membro) => (<Link key={membro.id} to={`/company/${membro.id}`}>{membro.name}</Link>))}
-      <h1>Home</h1>
-      <h2>Company</h2>
-      <button>Cantina da esquina</button>
-      <button>Lanches do ogro</button>
-      <button>Antunes</button>
-      <div>
-        <button onClick={handleclick}>Pedro</button>
-        <button>Alex</button>
-      </div>
+      <h1>Lista de Membros</h1>
+      <ul>
+        {members.map(member => (
+          <li key={member.id}>
+            <Link to={member.type === 'pj' ? `/company/${member.id}` : `/customer/${member.id}`}>
+              {member.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

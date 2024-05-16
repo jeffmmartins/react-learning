@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const Customer = () => {
+const Customer = ({members}) => {
+  const {id} = useParams();
+  const member = members.find(member => member.id.toString() === id)
   return (
     <div>
-      <h1>Detalhes do Cliente</h1>
-      <h2>Nome do Cliente: </h2>
+      {member ? (
+        <>
+        <h1>Customer: {member.name}</h1>
+        <p>ID: {member.id}</p>
+        <p>Type: {member.type}</p>
+        </>
+      ): (
+        <p>Member not Found</p>
+      )}
     </div>
   )
 }
