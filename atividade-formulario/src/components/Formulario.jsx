@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form'
+import Input from './Input';
 
 const Formulario = () => {
     const {register, handleSubmit } = useForm();
@@ -11,11 +12,11 @@ const Formulario = () => {
   return (
     <div>
       <form action="" onSubmit={handleSubmit(salvar)}>
-        <input type="text" placeholder='Digite o nome completo' {...register("name")} />
-        <input type="date" placeholder='Data de Nascimento' {...register("Date")}/>
-        <input type="text" placeholder='naturalidade' {...register("naturalidade")} />
-        <input type="text" placeholder='Email' {...register("email")} />
-        <input type="password" placeholder='Senha'  {...register("senha")}/>
+        <Input type="text" placeholder='Digite o nome completo' label="Nome" {...register("name")} />
+        <Input type="date" placeholder='Data de Nascimento' label="Data de Nascimento" {...register("Date")}/>
+        <Input type="text" placeholder='naturalidade' label="Naturalidade" {...register("naturalidade")} />
+        <Input type="text" placeholder='Email' label="E-mail" {...register("email")} />
+        <Input type="password" placeholder='Senha' label="Senha" {...register("senha")}/>
         <button>Cadastrar</button>
       </form>
     </div> 
