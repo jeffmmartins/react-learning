@@ -17,4 +17,4 @@ const Input = forwardRef(({ label, type, id, placeholder, ...rest }, ref) => {
   );
 });
 
-export default Input;
+export default Input
