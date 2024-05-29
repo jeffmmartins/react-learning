@@ -1,0 +1,11 @@
+import React from "react";
+
+const ComponentC = () => {
+  return (
+    <div>
+      <p>Exemplo Prop Drilling</p>
+    </div>
+  );
+};
+
+export default ComponentC;
