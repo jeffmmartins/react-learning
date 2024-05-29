@@ -1,6 +1,6 @@
 
 import './App.css';
-import ComponentC from './components/ComponentCjsx';
+import ComponentC from './components/ComponentC';
 import CompronentD from './components/CompronentD';
 
 
