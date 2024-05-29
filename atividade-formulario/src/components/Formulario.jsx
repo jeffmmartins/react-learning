@@ -15,6 +15,7 @@ const Formulario = () => {
 
     const salvar = (formData) => {
         setCard(formData)
+        console.log(formData)
     }
 
   return (
@@ -23,7 +24,7 @@ const Formulario = () => {
         {card ? <Card card={card}/> : <form action="" onSubmit={handleSubmit(salvar)}>
         <Input type="text" placeholder='Digite o nome completo'  label="Nome: " {...register("name")} />
         {errors.name ? <p>{errors.name.message}</p> : null }
-        <Input type="date" placeholder='Data de Nascimento' label="Data de Nascimento: " {...register("Date")}/>
+        <Input type="date" placeholder='Data de Nascimento' label="Data de Nascimento:" {...register("date")}/>
         <Input type="text" placeholder='naturalidade' label="Naturalidade: " {...register("naturalidade")} />
         {errors.naturalidade ? <p>{errors.naturalidade.message}</p> : null }
         <Input type="text" placeholder='Email' label="E-mail: " {...register("email")} />
