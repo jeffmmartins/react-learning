@@ -18,14 +18,14 @@ const Formulario = () => {
     <div>
       <form action="" onSubmit={handleSubmit(salvar)}>
         <Input type="text" placeholder='Digite o nome completo' label="Nome" {...register("name")} />
-        <p>{errors ? errors.name.message : null }</p>
+        {errors.name ? <p>{errors.name.message}</p> : null }
         <Input type="date" placeholder='Data de Nascimento' label="Data de Nascimento" {...register("Date")}/>
         <Input type="text" placeholder='naturalidade' label="Naturalidade" {...register("naturalidade")} />
-        <p>{errors ? errors.naturalidade.message : null }</p>
+        {errors.naturalidade ? <p>{errors.naturalidade.message}</p> : null }
         <Input type="text" placeholder='Email' label="E-mail" {...register("email")} />
-        <p>{errors ? errors.email.message : null }</p>
+        {errors.email ? <p>{errors.email.message}</p> : null }
         <Input type="password" placeholder='Senha' label="Senha" {...register("senha")}/>
-        <p>{errors ? errors.senha.message : null }</p>
+        {errors.senha ? <p>{errors.senha.message}</p> : null }
         <button>Cadastrar</button>
       </form>
     </div> 
