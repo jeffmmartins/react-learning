@@ -1,5 +1,5 @@
 # Sistema de Cadastro de Usuário
-Essa atividade é um sistema de cadastro de usuários desenvolvido em React, com foco na componentização e na utilização de hooks. O sistema permite aos usuários se registrarem fornecendo nome, e-mail e senha.
+Essa atividade é um sistema de cadastro de usuários desenvolvido em React, com foco na componentização e na utilização de hooks. O sistema permite aos usuários se registrarem fornecendo nome, data de nasciemnto, naturalidade, e-mail e senha, logo após feito o envio dos dados é renderizado o componente Card.
 Fiz esse projeto para desenvolver minhas habilidades que venho estudando em react.
 
 ## Tecnologias Utilizadas
