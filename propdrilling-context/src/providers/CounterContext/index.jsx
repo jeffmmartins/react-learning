@@ -1,20 +1,25 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 
 export const CounterContext = createContext({});
 
 export const CounterProvider = ({children}) => {
-    const [ counter, setCounter] = useState(0);
+    const localCounter = localStorage.getItem("@COUNTER")
+    const [ counter, setCounter] = useState(localCounter ? localCounter : 0);
 
-    const subtrair = () => {
-        return setCounter(counter - 1)
+    useEffect(()=> {
+        localStorage.setItem("@COUNTER", counter)
+    }, [counter])
+
+    const subtrair = (number) => {
+        return setCounter(counter - number)
       }
 
-      const adicionar = () => {
-        return setCounter(counter + 1)
+      const adicionar = (number) => {
+        return setCounter(counter + number)
       }
 
     return (
-        <CounterContext.Provider value={{counter, subtrair, adicionar}}>
+        <CounterContext.Provider value={{counter, setCounter,  subtrair, adicionar}}>
             {children}
         </CounterContext.Provider>
     )
