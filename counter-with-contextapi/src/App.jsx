@@ -1,16 +1,9 @@
 import { useContext } from 'react';
 import './App.css';
 import { CounterContext } from './providers/CounterContext';
+
 function App() {
-  const {counter,setCounter} = useContext(CounterContext)
-
-  const adicionar = () => {
-    return setCounter(counter + 1)
-  }
-
-  const subtrair = () => {
-    return setCounter(counter - 1)
-  }
+  const {counter,subtrair, adicionar} = useContext(CounterContext)
 
   return (
     <div className="App">
