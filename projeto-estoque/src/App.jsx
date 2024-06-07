@@ -1,5 +1,6 @@
 import "./App.css";
 import { CardProduct } from "./components/CradProduct";
+import { RegisterProductForm } from "./components/RegisterProductForm";
 import { DefaultTemplate } from "./components/template/DefaultTemplate";
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <li key={slug}>{label}</li>
           ))}
         </ul>
+        <RegisterProductForm categories={categories}/>
         <ul>
           {fruitList.map(({ productName, productWeight }) => {
             return (
