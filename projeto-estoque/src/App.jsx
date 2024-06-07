@@ -1,5 +1,6 @@
 
 import './App.css'
+import { DefaultTemplate } from './components/template/DefaultTemplate';
 
 function App() {
   const fruitList = [
@@ -42,7 +43,9 @@ function App() {
 
   return (
     <>
-      
+      <DefaultTemplate>
+        <h1>Teste</h1>
+      </DefaultTemplate>
     </>
   )
 }
