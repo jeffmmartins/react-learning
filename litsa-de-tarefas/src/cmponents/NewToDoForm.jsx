@@ -4,7 +4,10 @@ const NewToDoForm = () => {
   return (
     <div>
       <h1>Lista de Tarefas</h1>
-      <form></form>
+      <form>
+        <input type="text" />
+        <button>Adicionar Tarefa</button>
+      </form>
     </div>
   )
 }
