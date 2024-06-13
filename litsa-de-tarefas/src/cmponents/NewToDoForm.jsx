@@ -1,14 +1,9 @@
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+
+import { useContext } from 'react';
+import { ListaTarefaContext } from '../context/todos';
 
 const NewToDoForm = () => {
-
-const {register, handleSubmit} = useForm()
-const [tarefas, setTarefas] = useState();
-
-const infoForm = (formData) => {
-    setTarefas(formData.tarefa) 
-}
+const {tarefas,infoForm, register, handleSubmit} = useContext(ListaTarefaContext)
 
   return (
     <div>
