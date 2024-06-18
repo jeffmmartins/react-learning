@@ -1,11 +1,13 @@
 import './App.css'
+import { StyledButton } from './style/Button'
 
 function App() {
   
 
   return (
     <>
-      <button>Adicionar</button>
+      <StyledButton buttonSize='lg'>Adicionar</StyledButton>
+     
     </>
   )
 }
