@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { ListaTarefaContext } from '../context/todos';
 
 const NewToDoForm = () => {
-const {tarefas,infoForm, register, handleSubmit} = useContext(ListaTarefaContext)
+const {tarefas, infoForm, register, handleSubmit} = useContext(ListaTarefaContext)
 
   return (
     <div>
