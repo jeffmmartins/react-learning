@@ -8,7 +8,7 @@ const {tarefas, infoForm, register, handleSubmit} = useContext(ListaTarefaContex
   return (
     <div>
       <h1>Lista de Tarefas</h1>
-      {tarefas ? tarefas : null}
+      {tarefas ? tarefas  : null}
       <form onSubmit={handleSubmit(infoForm)}>
         <input type="text" placeholder='Exemplo: Estudar'{...register("tarefa")} />
         <button>Adicionar Tarefa</button>
