@@ -4,20 +4,18 @@ import { useForm } from "react-hook-form";
 export const ListaTarefaContext = createContext({})
 
 export const ListaTarefasProvider = ({children}) => {
-    const [tarefas, setTarefas] = useState([]);
+    const dados = localStorage.getItem('tarefa')
+    const info =  JSON.parse(dados)
+    const [tarefas, setTarefas] = useState(dados ? info : null);
     const {register, handleSubmit} = useForm();
 
-    useEffect(() => {
-        const dados = localStorage.getItem("tarefas")
-        {dados ? JSON.parse(dados) : null}
-    },[])
 
     useEffect(() => {
-        localStorage.setItem('cadastro', tarefas)
+        localStorage.setItem('tarefa', JSON.stringify(tarefas))
     },[tarefas])
 
     const infoForm = (formData) => {
-        setTarefas(formData.tarefa) 
+        setTarefas( formData.tarefa) 
     }
 
     return (
