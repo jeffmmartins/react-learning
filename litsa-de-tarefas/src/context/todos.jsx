@@ -19,8 +19,11 @@ export const ListaTarefasProvider = ({children}) => {
         setTarefas([...tarefas, formData.tarefa]) 
     }
 
+    const remover = () => {
+        
+    }
     return (
-        <ListaTarefaContext.Provider value={{tarefas, setTarefas, register, handleSubmit, infoForm}}>
+        <ListaTarefaContext.Provider value={{tarefas, setTarefas, register, handleSubmit, infoForm, remover}}>
             {children}
         </ListaTarefaContext.Provider>
     )

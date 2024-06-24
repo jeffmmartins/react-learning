@@ -1,16 +1,15 @@
 
 import { useContext } from 'react';
 import { ListaTarefaContext } from '../context/todos';
+import ToDo from './ToDo';
 
 const NewToDoForm = () => {
-const {tarefas, infoForm, register, handleSubmit} = useContext(ListaTarefaContext)
+const {tarefas, infoForm, register, handleSubmit, remover} = useContext(ListaTarefaContext)
 
   return (
     <div>
       <h1>Lista de Tarefas</h1>
-      {tarefas.map((tarefa, index) => (
-        <p key={index}>{tarefa} <button>Excluir</button></p>
-      ))}
+      <ToDo tarefas={tarefas} remover={remover}/>
       <form onSubmit={handleSubmit(infoForm)}>
         <input type="text" placeholder='Exemplo: Estudar'{...register("tarefa")} />
         <button>Adicionar Tarefa</button>
