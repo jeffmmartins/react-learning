@@ -9,7 +9,7 @@ const {tarefas, infoForm, register, handleSubmit} = useContext(ListaTarefaContex
     <div>
       <h1>Lista de Tarefas</h1>
       {tarefas.map((tarefa, index) => (
-        <p key={index}>{tarefa}</p>
+        <p key={index}>{tarefa} <button>Excluir</button></p>
       ))}
       <form onSubmit={handleSubmit(infoForm)}>
         <input type="text" placeholder='Exemplo: Estudar'{...register("tarefa")} />
