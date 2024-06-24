@@ -1,10 +1,9 @@
-import React from 'react'
+const ToDo = ({tarefas, removerTarefa}) => {
 
-const ToDo = ({tarefas,remover}) => {
   return (
     <div>
       {tarefas.map((tarefa, index) => (
-        <p key={index}>{tarefa} <button onClick={remover()}>Excluir</button></p>
+        <p key={index}>{tarefa} <button onClick={() => removerTarefa(index)}>Excluir</button></p>
       ))}
     </div>
   )

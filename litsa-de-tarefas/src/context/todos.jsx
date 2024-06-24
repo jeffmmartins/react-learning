@@ -19,11 +19,12 @@ export const ListaTarefasProvider = ({children}) => {
         setTarefas([...tarefas, formData.tarefa]) 
     }
 
-    const remover = () => {
-        
+    const removerTarefa = (index) => {
+        const remover = tarefas.filter((_, i) => (i !== index));
+        setTarefas(remover)
     }
     return (
-        <ListaTarefaContext.Provider value={{tarefas, setTarefas, register, handleSubmit, infoForm, remover}}>
+        <ListaTarefaContext.Provider value={{tarefas, setTarefas, register, handleSubmit, infoForm, removerTarefa}}>
             {children}
         </ListaTarefaContext.Provider>
     )
