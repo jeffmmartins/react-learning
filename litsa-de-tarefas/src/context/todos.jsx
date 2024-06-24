@@ -6,7 +6,7 @@ export const ListaTarefaContext = createContext({})
 export const ListaTarefasProvider = ({children}) => {
     const dados = localStorage.getItem('tarefa')
     const info =  JSON.parse(dados)
-    const [tarefas, setTarefas] = useState(dados ? info : null);
+    const [tarefas, setTarefas] = useState(dados ? info : []);
     const {register, handleSubmit} = useForm();
 
 
@@ -15,7 +15,8 @@ export const ListaTarefasProvider = ({children}) => {
     },[tarefas])
 
     const infoForm = (formData) => {
-        setTarefas( formData.tarefa) 
+        // logica aqui 
+        setTarefas([...tarefas, formData.tarefa]) 
     }
 
     return (
