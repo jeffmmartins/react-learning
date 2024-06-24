@@ -7,16 +7,16 @@ export const ListaTarefasProvider = ({children}) => {
     const dados = localStorage.getItem('tarefa')
     const info =  JSON.parse(dados)
     const [tarefas, setTarefas] = useState(dados ? info : []);
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, reset} = useForm();
 
 
     useEffect(() => {
         localStorage.setItem('tarefa', JSON.stringify(tarefas))
     },[tarefas])
 
-    const infoForm = (formData) => {
-        // logica aqui 
+    const infoForm = (formData) => { 
         setTarefas([...tarefas, formData.tarefa]) 
+        reset()
     }
 
     const removerTarefa = (index) => {
