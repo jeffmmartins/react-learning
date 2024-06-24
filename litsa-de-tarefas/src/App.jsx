@@ -1,14 +1,12 @@
-import './App.css'
-import NewToDoForm from './cmponents/NewToDoForm'
+import "./App.css";
+import NewToDoForm from "./cmponents/NewToDoForm";
 
 function App() {
-  
-
   return (
     <>
-      <NewToDoForm/>
+      <NewToDoForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

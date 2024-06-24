@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { CardProduct } from "./components/CradProduct";
 import { RegisterProductForm } from "./components/RegisterProductForm";
 import { DefaultTemplate } from "./components/template/DefaultTemplate";
@@ -41,6 +42,8 @@ function App() {
       label: "Ovos",
     },
   ];
+
+  const [productList, setProductList] = useState(fruitList)
 
   return (
     <>
