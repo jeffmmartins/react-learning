@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const RegisterProductForm = ({categories}) => {
+export const RegisterProductForm = ({categories, addProductList}) => {
     /*
     const [productName, setProductName] = useState("")
     const [productWeight, setProductWeight] = useState("")
@@ -15,6 +15,7 @@ export const RegisterProductForm = ({categories}) => {
 
     const onSubmit = (event) => {
         event.preventDefault()
+        addProductList(formData)
         console.log(formData)
         setFormData({
             productName: "",

@@ -45,6 +45,10 @@ function App() {
 
   const [productList, setProductList] = useState(fruitList)
 
+  const addProductList = (formData) => {
+    const newProduct = {...formData, productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
+    console.log(newProduct)
+  }
   return (
     <>
       <DefaultTemplate>
@@ -54,7 +58,7 @@ function App() {
             <li key={slug}>{label}</li>
           ))}
         </ul>
-        <RegisterProductForm categories={categories}/>
+        <RegisterProductForm categories={categories} addProductList={addProductList}/>
         <ul>
           {fruitList.map(({ productName, productWeight }) => {
             return (
