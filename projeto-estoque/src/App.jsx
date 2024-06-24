@@ -48,6 +48,7 @@ function App() {
   const addProductList = (formData) => {
     const newProduct = {...formData, productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
     console.log(newProduct)
+    setProductList([...productList, newProduct])
   }
   return (
     <>
@@ -60,7 +61,7 @@ function App() {
         </ul>
         <RegisterProductForm categories={categories} addProductList={addProductList}/>
         <ul>
-          {fruitList.map(({ productName, productWeight }) => {
+          {productList.map(({ productName, productWeight }) => {
             return (
               <CardProduct
                 key={productName}
