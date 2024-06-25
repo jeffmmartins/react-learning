@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CardProduct } from "./components/CradProduct";
 import { RegisterProductForm } from "./components/RegisterProductForm";
 import { DefaultTemplate } from "./components/template/DefaultTemplate";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const fruitList = [
@@ -49,10 +50,8 @@ function App() {
   //const [count, setCount] = useState(0) forjando um id unico
 
   const addProductList = (formData) => {
-    const newProduct = {...formData, id: count, productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
-
+    const newProduct = {...formData, id: uuidv4(), productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
     setProductList([...productList, newProduct])
-    setCount(count + 1)
     console.log(newProduct)
   }
   return (
@@ -66,10 +65,10 @@ function App() {
         </ul>
         <RegisterProductForm categories={categories} addProductList={addProductList}/>
         <ul>
-          {productList.map(({ productName, productWeight }) => {
+          {productList.map(({ id, productName, productWeight }) => {
             return (
               <CardProduct
-                key={productName}
+                key={id}
                 productName={productName}
                 productWeight={productWeight}
               />
