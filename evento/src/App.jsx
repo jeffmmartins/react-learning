@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  function handleSubmit() {
+    console.log("clicou")
+  }
+
+  function handleScroll(event) {
+    console.log(event)
+  }
+
+  window.addEventListener("scroll", handleScroll)
 
   return (
-    <>
-      
-    </>
+    <div style={{height: "200vh"}}>
+      <button onClick={handleSubmit} onMouseMove={handleSubmit}>clique aqui</button>
+    </div>
   )
 }
 
