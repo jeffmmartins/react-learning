@@ -8,7 +8,6 @@ const NewToDoForm = () => {
 
   return (
     <div>
-      <h1>Lista de Tarefas</h1>
       <ToDo tarefas={tarefas} removerTarefa={removerTarefa} />
       <form onSubmit={handleSubmit(infoForm)}>
         <input
