@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import { CardProduct } from "./components/CradProduct";
 import { RegisterProductForm } from "./components/RegisterProductForm";
 import { DefaultTemplate } from "./components/template/DefaultTemplate";
 import { v4 as uuidv4 } from 'uuid';
+import { ListProduct } from "./components/ListProduct";
 
 function App() {
   const fruitList = [
@@ -64,17 +64,7 @@ function App() {
           ))}
         </ul>
         <RegisterProductForm categories={categories} addProductList={addProductList}/>
-        <ul>
-          {productList.map(({ id, productName, productWeight }) => {
-            return (
-              <CardProduct
-                key={id}
-                productName={productName}
-                productWeight={productWeight}
-              />
-            );
-          })}
-        </ul>
+        <ListProduct productList={productList}/>
       </DefaultTemplate>
     </>
   );
