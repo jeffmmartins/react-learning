@@ -4,6 +4,7 @@ import { RegisterProductForm } from "./components/RegisterProductForm";
 import { DefaultTemplate } from "./components/template/DefaultTemplate";
 import { v4 as uuidv4 } from 'uuid';
 import { ListProduct } from "./components/ListProduct";
+import { ListCategories } from "./components/ListCategories";
 
 function App() {
   const fruitList = [
@@ -57,12 +58,7 @@ function App() {
   return (
     <>
       <DefaultTemplate>
-        <h1>Meu Estoque:</h1>
-        <ul>
-          {categories.map(({ label, slug }) => (
-            <li key={slug}>{label}</li>
-          ))}
-        </ul>
+        <ListCategories categories={categories}/>
         <RegisterProductForm categories={categories} addProductList={addProductList}/>
         <ListProduct productList={productList}/>
       </DefaultTemplate>
