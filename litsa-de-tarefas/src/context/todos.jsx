@@ -14,6 +14,11 @@ export const ListaTarefasProvider = ({ children }) => {
   }, [tarefas]);
 
   const infoForm = (formData) => {
+    if(!formData.tarefa) {
+      alert("Favor preencher o campo")
+      return
+    }
+    console.log(formData)
     setTarefas([...tarefas, formData.tarefa]);
     reset();
   };
