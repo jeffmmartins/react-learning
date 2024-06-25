@@ -45,10 +45,14 @@ function App() {
 
   const [productList, setProductList] = useState(fruitList)
 
+  // forjando um id unico 
+  const [count, setCount] = useState(0)
+
   const addProductList = (formData) => {
-    const newProduct = {...formData, productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
+    const newProduct = {...formData, id: count, productWeight: Number(formData.productWeight)} // vem as informações do objeto e alterando o productweight
     console.log(newProduct)
     setProductList([...productList, newProduct])
+    setCount(count + 1)
   }
   return (
     <>
