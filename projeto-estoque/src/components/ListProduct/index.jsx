@@ -1,13 +1,13 @@
 import { CardProduct } from "../CradProduct";
-export const ListProduct = ({productList}) => {
+export const ListProduct = ({productList, removeProductFromProductlist}) => {
     return (
         <ul>
-          {productList.map(({ id, productName, productWeight }) => {
+          {productList.map(({ product }) => {
             return (
               <CardProduct
-                key={id}
-                productName={productName}
-                productWeight={productWeight}
+                key={product.id}
+                product = {product}
+                removeProductFromProductlist={removeProductFromProductlist}
               />
             );
           })}

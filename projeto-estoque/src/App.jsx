@@ -55,12 +55,21 @@ function App() {
     setProductList([...productList, newProduct])
     console.log(newProduct)
   }
+
+  const removeProductFromProductlist = (productId) => {
+    const newProduct = productList.filter((product) => {
+      return product.id !== productId
+    });
+    setProductList(newProduct)
+    // retorna tudo, menos o que eu quero remover.
+  }
+
   return (
     <>
       <DefaultTemplate>
         <ListCategories categories={categories}/>
         <RegisterProductForm categories={categories} addProductList={addProductList}/>
-        <ListProduct productList={productList}/>
+        <ListProduct productList={productList} removeProductFromProductlist={removeProductFromProductlist}/>
       </DefaultTemplate>
     </>
   );
