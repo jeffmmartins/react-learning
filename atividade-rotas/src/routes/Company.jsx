@@ -2,7 +2,6 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 const Company = ({members}) => {
   const { id } = useParams();
-
   const member = members.find(member => member.id.toString() === id)
   return (
     <div>
