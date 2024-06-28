@@ -1,11 +1,11 @@
 import { BsRocketFill } from "react-icons/bs";
-
+import style from "../cmponents/Style/Header.module.css"
 
 const Header = () => {
   return (
-    <div>
-      <h1 className="bg-">Lista de Tarefas <BsRocketFill/></h1>
-    </div>
+    <>
+      <h1>Lista de Tarefas <BsRocketFill/></h1>
+      </>
   );
 };
 
