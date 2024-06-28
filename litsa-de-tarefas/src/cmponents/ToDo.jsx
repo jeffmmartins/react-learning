@@ -1,4 +1,5 @@
-import style from "./Style/ToDo.module.css"
+import style from "./Style/ToDo.module.css";
+import { GrTrash } from "react-icons/gr";
 
 const ToDo = ({ tarefas, removerTarefa }) => {
   return (
@@ -8,7 +9,7 @@ const ToDo = ({ tarefas, removerTarefa }) => {
         <p className={style.tarefas}>
           {tarefa}
         </p> 
-        <button  onClick={() => removerTarefa(index)}>Excluir</button>
+        <button  onClick={() => removerTarefa(index)}><GrTrash /></button>
         </div>
       ))}
     </div>
