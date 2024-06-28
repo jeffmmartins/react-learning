@@ -1,3 +1,9 @@
 .header {
-    color: white;
+    color: #4F15FA;
+    font-size: 2.2em;
+    line-height: 1.1;
+}
+
+.span {
+    color: #3180CF;
 }

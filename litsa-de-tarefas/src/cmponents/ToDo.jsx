@@ -1,7 +1,6 @@
 import style from "./Style/ToDo.module.css"
 
 const ToDo = ({ tarefas, removerTarefa }) => {
-  // lembrar de escolher a div e colocar max width pra ficra 
   return (
     <div>
       {tarefas.map((tarefa, index) => (
