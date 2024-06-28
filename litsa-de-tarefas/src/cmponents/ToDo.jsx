@@ -6,7 +6,7 @@ const ToDo = ({ tarefas, removerTarefa }) => {
     <div>
       {tarefas.map((tarefa, index) => (
         <div key={index} className={style.lista}>
-        <p>
+        <p className={style.tarefas}>
           {tarefa}
         </p> 
         <button  onClick={() => removerTarefa(index)}>Excluir</button>
