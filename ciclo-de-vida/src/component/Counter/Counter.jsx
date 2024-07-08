@@ -1,6 +1,10 @@
 import React from "react";
 
 export class Counter extends React.Component{
+    constructor(){
+        super();
+        console.log("construido a classe counter")
+    }
     render() {
         return (
             <>
