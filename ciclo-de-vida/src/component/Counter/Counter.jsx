@@ -5,6 +5,15 @@ export class Counter extends React.Component{
         super();
         console.log("construido a classe counter")
     }
+
+    UNSAFE_componentWillMount(){
+        console.log("nosso componente contador sera montado")
+    }
+
+    componentDidMount() {
+        console.log("componente foi montado ... ")
+    }
+
     render() {
         return (
             <>
