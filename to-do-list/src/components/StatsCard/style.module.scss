@@ -1,3 +1,16 @@
 .stats_card {
-    background-color: aquamarine;
+    background-color: white;
+    color: black;
+    width: 100%; // ocupa 100% do espaço que pode ocupar
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+
+    h2 {
+        font-size: 1rem;
+    }
+    
+    span {
+        font-size: 4rem;
+    }
 }

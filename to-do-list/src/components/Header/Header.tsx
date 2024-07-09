@@ -1,3 +1,4 @@
+import { StatsCard } from "../StatsCard/StatsCard";
 import style from "./style.module.scss"
 
 export const Header: React.FC = () => {
@@ -9,7 +10,9 @@ export const Header: React.FC = () => {
                     <span>Bem Vindo, Jefferson</span>
                 </div>
                 <div>
-                    {/*cards*/}
+                    <StatsCard/>
+                    <StatsCard/>
+                    <StatsCard/>
                 </div>
             </div>
         </header>
