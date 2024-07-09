@@ -1,6 +1,8 @@
+import style from "./style.module.css"
+
 export const Header: React.FC = () => {
   return (
-    <header>
+    <header className={style.header}>
       <div>
         <h1>My To do</h1>
         <span>Bem Vindo, Jefferson</span>
