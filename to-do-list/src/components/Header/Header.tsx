@@ -10,9 +10,9 @@ export const Header: React.FC = () => {
                     <span>Bem Vindo, Jefferson</span>
                 </div>
                 <div>
-                    <StatsCard/>
-                    <StatsCard/>
-                    <StatsCard/>
+                    <StatsCard title="teste1" value="5"/>
+                    <StatsCard title="teste2" value="4"/>
+                    <StatsCard title="teste3" value="2"/>
                 </div>
             </div>
         </header>

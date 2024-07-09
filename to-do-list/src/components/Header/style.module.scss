@@ -21,7 +21,8 @@
         align-items: center;
         gap: 2rem;
 
-        
+        // estou alterando no eixo y caso colocasse negativo ele iria subir 
+        transform: translateY(50%);
     }
 }
 

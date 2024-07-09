@@ -1,10 +1,15 @@
 import style from "./style.module.scss"
 
-export const StatsCard: React.FC = () => {
+interface StatsCardProps {
+    title: string;
+    value: number;
+}
+
+export const StatsCard: React.FC<StatsCardProps> = (props) => {
     return (
         <article className={style.stats_card}>
-            <h2>Total de Tarefas</h2>
-            <span>5</span>
+            <h2>{props.title}</h2>
+            <span>{props.value}</span>
         </article>
     )
 }
