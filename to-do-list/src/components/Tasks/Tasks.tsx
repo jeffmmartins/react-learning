@@ -7,8 +7,8 @@ export const Tasks: React.FC = () => {
                 <div>
                     <label htmlFor="task-title">Adicionar Tarefa</label>
                     <input type="text" id="task-title" placeholder="Titulo da tarefa" />
-                    <button>Adicionar Tarefa</button>
                 </div>
+                <button>Adicionar Tarefa</button>
             </form>
         </section>
     )
