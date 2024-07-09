@@ -15,6 +15,32 @@ export class Counter extends React.Component{
 
     componentDidMount() {
         console.log("componente foi montado ... ")
+
+        document.addEventListener('scroll', this.consoleScroll)
+    }
+
+    // para fazer a remoção , preciso criar um metodo externo e passar ele tanto no evento criado e no do remover 
+    //Chamado sempre que um prop ou um estado for atualizado , nao utilizar o false, porem quando é false o retorno o componente nunca vai atualizar 
+    shouldComponentUpdate() {
+        return true
+    }
+
+    UNSAFE_componentWillUpdate() {
+        console.log('componente será atualizado')
+    }
+
+    componentDidUpdate() {
+        console.log('componente já atualizou ')
+    }
+
+    componentWillUnmount() {
+        console.log('COMPONENTE VAI DESMONTAR ')
+
+        document.removeEventListener('scroll', this.consoleScroll)
+    }
+
+    consoleScroll(){
+        console.log('ROLANDO A PAGINA')
     }
 
     render() {
@@ -23,7 +49,7 @@ export class Counter extends React.Component{
             <>
                 <h1>{this.state.contador}</h1>
                 <button onClick={() => this.setState({contador: this.state.contador + 1})}>Aumentar</button>
-                <button onClick={() => this.setState({contador: this.state.contador 1 1})}>Diminuir</button>
+                <button onClick={() => this.setState({contador: this.state.contador - 1})}>Diminuir</button>
             </>
         )
     }
