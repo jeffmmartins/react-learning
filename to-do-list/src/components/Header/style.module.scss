@@ -2,3 +2,18 @@
     background: green;
     color: white;
 }
+
+.container {
+    max-width: 1240px;
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    // posso fazer isso pois estou usando o sass estou dizendo que tem um div dentro dessa class container 
+    // somente na primeira div
+    div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
