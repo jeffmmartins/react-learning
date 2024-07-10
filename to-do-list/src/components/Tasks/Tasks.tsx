@@ -29,10 +29,11 @@ export const Tasks: React.FC = () => {
         }
 
         // adicionando tarefa, o spread esta pegando tudo que tinha antes, 
-        setTasks([
+        const newTask = [
             ...tasks, 
             {id: new Date().getTime(), title: taskTitle, done: false} // passando o objeto para o array novo 
-        ])
+        ]
+        setTasks(newTask)
 
         setTaskTitle('')
         console.log(tasks)
