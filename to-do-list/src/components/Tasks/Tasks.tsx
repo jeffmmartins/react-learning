@@ -1,10 +1,16 @@
 import { FormEvent, useState } from "react";
 import style from "./style.module.scss";
 
+interface Task {
+    title: string;
+    done: boolean;
+    id: number;
+}
+
 export const Tasks: React.FC = () => {
     const [taskTitle, setTaskTitle] = useState("");
     //para adicionar as tarefas é criado um array para adicionar as tarefas 
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([] as Task[]) // isso quer dizer que o array seja como array de tarefas
 
     /*
         [
@@ -13,6 +19,7 @@ export const Tasks: React.FC = () => {
     */
 
     // função disparada quando o usuario quer adicionar uma nova tarefa 
+    // e joga dentro do array novo que está sendo criado.
     const handleSubmitAddTask = (event: FormEvent) => {
         event.preventDefault()
 
@@ -20,6 +27,15 @@ export const Tasks: React.FC = () => {
             alert('Não é possivel adicionar uma tarefa com menos de 3 letras')
             return
         }
+
+        // adicionando tarefa, o spread esta pegando tudo que tinha antes, 
+        setTasks([
+            ...tasks, 
+            {id: new Date().getTime(), title: taskTitle, done: false} // passando o objeto para o array novo 
+        ])
+
+        setTaskTitle('')
+        console.log(tasks)
     }
 
     return (
@@ -34,14 +50,12 @@ export const Tasks: React.FC = () => {
                 <button type="submit">Adicionar Tarefa</button>
             </form>
             <ul>
-                <li>
-                    <input type="checkbox" id="task" />
-                    <label htmlFor="task">tarefa 1</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="task" />
-                    <label htmlFor="task">tarefa 1</label>
-                </li>
+                {tasks.map((task) => (
+                    <li key={task.id}>
+                    <input type="checkbox" id={`task - ${task.id}`} />
+                    <label htmlFor={`task - ${task.id}`}>{task.title}</label>
+                    </li>
+                ))}
             </ul>
         </section>
     )
