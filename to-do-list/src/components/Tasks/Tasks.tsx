@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import style from "./style.module.scss";
 
 interface Task {
@@ -34,10 +34,16 @@ export const Tasks: React.FC = () => {
             {id: new Date().getTime(), title: taskTitle, done: false} // passando o objeto para o array novo 
         ]
         setTasks(newTask)
+        localStorage.setItem("Task", JSON.stringify(newTask))
 
         setTaskTitle('')
         console.log(tasks)
     }
+
+    useEffect(() => {
+        const tasksONLocalStorage = localStorage.getItem("Task")
+        tasksONLocalStorage ? setTasks(JSON.parse(tasksONLocalStorage)) : null
+    },[])
 
     return (
         <section className={style.container}>
