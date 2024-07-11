@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 interface MemoizationProps {
     finacialData: {
@@ -10,13 +10,24 @@ interface MemoizationProps {
 export const Memoization: React.FC<MemoizationProps> = ({finacialData}) => {
     const [showValues, setShowValues] = useState(true)
     // total é o valor acumulativo. iniciando com 0
-    const totalIncomes = finacialData.incomes.reduce((total, income) => {
-        return total += income
-    },0)
 
-    const totalOutcomes = finacialData.outcomes.reduce((total, outcome) => {
+    // usar useMemo quando tiver calculos complexos para caso nao altere valor constnate desse calculo pra nao refazer o calculo e perder a performace do app
+    // essa depedencia do usememo é para quando alterar valores no finacialData ai ele faz a re-renderização, fazendo o recalculo 
+    const totalIncomes = useMemo(() => {
+        finacialData.incomes.reduce((total, income) => {
+        return total += income
+        },0)
+    },[finacialData])
+    
+    const totalOutcomes = useMemo(() => {
+        finacialData.outcomes.reduce((total, outcome) => {
         return total += outcome
-    },0)
+        },0)
+    },[finacialData])
+    
+
+    // para verificar se o componente está rendenrizando. 
+    console.log("Re-rendenrização do componente")
 
     return(
         <div>
