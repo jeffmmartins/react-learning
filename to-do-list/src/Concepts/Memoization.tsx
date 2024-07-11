@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 interface MemoizationProps {
     finacialData: {
         incomes: number[],
@@ -6,6 +8,7 @@ interface MemoizationProps {
 }
 
 export const Memoization: React.FC<MemoizationProps> = ({finacialData}) => {
+    const [showValues, setShowValues] = useState(true)
     // total é o valor acumulativo. iniciando com 0
     const totalIncomes = finacialData.incomes.reduce((total, income) => {
         return total += income
@@ -21,9 +24,15 @@ export const Memoization: React.FC<MemoizationProps> = ({finacialData}) => {
 
             <h2>UseMemo</h2>
 
-            <p>{`Total do valor de entrada é : ${totalIncomes}`}</p>
+            <p>{`Total do valor de entrada é : ${showValues ? totalIncomes : "XXXXXX" }`}</p>
             <br />
-            <p>{`Total do valor de entrada é : ${totalOutcomes}`}</p>
+            <p>{`Total do valor de entrada é : ${showValues ? totalOutcomes : "XXXXXXX"}`}</p>
+
+            <br />
+            <br />
+            <button onClick={() => setShowValues(!showValues)}>
+                {showValues ? "Ocultar Valores" : "Mostar Valores"}
+            </button>
         </div>
     )
 }
