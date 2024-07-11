@@ -1,5 +1,6 @@
 import { Header } from "./components/Header/Header"
 import { Tasks } from "./components/Tasks/Tasks"
+import { FormRef } from "./Concepts/FormRef"
 import { Refs } from "./Concepts/Refs"
 import "./style/global.css"
 
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <Tasks/>
       <Refs/>
+      <FormRef/>
     </>
   )
 }
