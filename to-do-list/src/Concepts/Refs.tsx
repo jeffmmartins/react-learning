@@ -1,19 +1,36 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export const Refs: React.FC = () => {
-    const ref = useRef(0)
+    // preciso especificar de acordo com ts que vai ser um inputelement quando eu inicializo de null
+    const inputRef = useRef<HTMLInputElement>(null) // {current : value } é um objeto que tem um atributo current 
+     // quando atualizo o estado acontece a re-redenrização 
+    console.log(inputRef)
 
+    
+    // para conseguir ver no inicio o que o inputref esta referenciando precisa utilizar o useEffect
+    /*
+    useEffect(() => {
+        console.log(inputRef)
+    },[inputRef])
+    */
+
+    //nesse exemplo mostra que quando o componente é re-renderizado ele nao altera nada na tela.
+    // muda o valor porem na tela nao é alterado 
     const handleOnClick = () => {
-        ref.current = ref.current += 1
-        console.log(ref.current)
+        if(inputRef.current !== null){ inputRef.current.focus()}
+      
+       // mesma linha de raciocionio de input.value
     }
 
     return (
-        <>
+        <div>
             <h1>Teste Ref</h1>
 
-            <p>{`O valor da ref é : ${ref.current}`}</p>
-            <button onClick={handleOnClick}>Clique Aqui</button>
-        </>
+            <input type="text" placeholder="digite algo"  ref={inputRef}/>
+            <button onClick={handleOnClick} >Clique Aqui</button>
+            
+        </div>
+
+
     )
 }
