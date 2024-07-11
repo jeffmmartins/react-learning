@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import style from "./style.module.scss";
 
+// quando tiver uma array tenho sempre que tipar o array 
 interface Task {
     title: string;
     done: boolean;
@@ -40,6 +41,7 @@ export const Tasks: React.FC = () => {
         console.log(tasks)
     }
 
+    // sempre que montar o componente ele vai puxar as tarefas salva
     useEffect(() => {
         const tasksONLocalStorage = localStorage.getItem("Task")
         tasksONLocalStorage ? setTasks(JSON.parse(tasksONLocalStorage)) : null
