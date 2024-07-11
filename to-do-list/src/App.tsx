@@ -13,8 +13,8 @@ function App() {
       <Header/>
       <Tasks/>
       {/*<Refs/>
-      <FormRef/>*/}
-      <Memoization finacialData={{incomes: [40,20,10], outcomes:[10,4,5]}}/>
+      <FormRef/>
+      <Memoization finacialData={{incomes: [40,20,10], outcomes:[10,4,5]}}/>*/}
     </>
   )
 }

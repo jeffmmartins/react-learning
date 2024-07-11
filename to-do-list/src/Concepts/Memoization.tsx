@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 
 interface MemoizationProps {
     finacialData: {
@@ -17,17 +17,21 @@ export const Memoization: React.FC<MemoizationProps> = ({finacialData}) => {
         finacialData.incomes.reduce((total, income) => {
         return total += income
         },0)
-    },[finacialData])
+    },[finacialData.incomes])
     
     const totalOutcomes = useMemo(() => {
         finacialData.outcomes.reduce((total, outcome) => {
         return total += outcome
         },0)
-    },[finacialData])
+    },[finacialData.outcomes])
     
 
     // para verificar se o componente está rendenrizando. 
     console.log("Re-rendenrização do componente")
+
+    const aplicarDesconto = useCallback((desconto: number) => {
+        return totalOutcomes * (1-desconto)
+    },[totalOutcomes])
 
     return(
         <div>
