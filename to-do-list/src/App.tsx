@@ -11,8 +11,8 @@ function App() {
     <>
       <Header/>
       <Tasks/>
-      <Refs/>
-      <FormRef/>
+      {/*<Refs/>
+      <FormRef/>*/}
     </>
   )
 }
