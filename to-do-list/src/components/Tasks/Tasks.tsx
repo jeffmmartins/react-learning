@@ -1,18 +1,17 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import style from "./style.module.scss";
+import { TaskContext } from "../../context/TaskContext";
 
-// quando tiver uma array tenho sempre que tipar o array 
-interface Task {
-    title: string;
-    done: boolean;
-    id: number;
-}
+
 
 export const Tasks: React.FC = () => {
     const [taskTitle, setTaskTitle] = useState("");
     //para adicionar as tarefas é criado um array para adicionar as tarefas 
-    const [tasks, setTasks] = useState([] as Task[]) // isso quer dizer que o array seja como array de tarefas
+    
 
+    //para acessar o contexto , dentro tenho que passar qual o contexto que quro acessar 
+    const variavel = useContext(TaskContext)
+    console.log(variavel)
     /*
         [
             {title: tarefa 1}, done: boolean}
@@ -41,11 +40,7 @@ export const Tasks: React.FC = () => {
         console.log(tasks)
     }
 
-    // sempre que montar o componente ele vai puxar as tarefas salva
-    useEffect(() => {
-        const tasksONLocalStorage = localStorage.getItem("Task")
-        tasksONLocalStorage ? setTasks(JSON.parse(tasksONLocalStorage)) : null
-    },[])
+    
 
     return (
         <section className={style.container}>

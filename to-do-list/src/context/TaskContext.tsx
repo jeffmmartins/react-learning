@@ -1,7 +1,14 @@
-import React, { Children, createContext } from "react";
+import React, {  createContext,useState,useEffect } from "react";
+
+// quando tiver uma array tenho sempre que tipar o array 
+export interface Task {
+    title: string;
+    done: boolean;
+    id: number;
+}
 
 // criando o contexto, normalmemnte compartilhamos um objeto 
-const TaskContext = createContext({});
+export const TaskContext = createContext({});
 
 // tipagem do childreen sempre vai ser REACT.REACTNODE
 interface TaskProviderProps{
@@ -9,13 +16,21 @@ interface TaskProviderProps{
 }
 
 // criando o componente provider
-export const TaskProvider: React.FC<TaskProviderProps> = () => {
+export const TaskProvider: React.FC<TaskProviderProps> = ({children}) => {
+    const [tasks, setTasks] = useState([] as Task[]) // isso quer dizer que o array seja como array de tarefas
+
+    // sempre que montar o componente ele vai puxar as tarefas salva
+    useEffect(() => {
+        const tasksONLocalStorage = localStorage.getItem("Task")
+        tasksONLocalStorage ? setTasks(JSON.parse(tasksONLocalStorage)) : null
+    },[])
+
     return (
         //no provider é onde eu exporto tudo que quero que seja 
         //acessivel na aplicação
         // children é quando queremos passar tags html para dentro de um componente 
-        <TaskContext.Provider value={}>
-
+        <TaskContext.Provider value={{tasks,setTasks}}>
+            {children}
         </TaskContext.Provider>
     )
 }
