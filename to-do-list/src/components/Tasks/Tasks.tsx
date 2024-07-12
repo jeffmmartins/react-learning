@@ -41,7 +41,24 @@ export const Tasks: React.FC = () => {
         console.log(tasks)
     }
 
-    
+    // passando o id da tarefa que quer alterar o status
+    // quando clicar no checkbox , pegar o id da tarefa e passar para essa função.
+    // função aplicada no input do checkbox
+    // função void é quando ela nao retorna nada , ou seja nao tem um return nela 
+    // onchenge ele espera uma funão , por isso apluca função arrow function , para nela o paramentro que queremos passar para a função 
+    const handleToggleTasksStatus = (tasksId: number) => {
+        // lógica de alterar o stus
+        const newTasks = tasks.map((task)=> {
+            if(tasksId === task.id) {
+                return {
+                    ...tasks,
+                    done: !task.done
+                }
+            }
+            return task
+        })
+        setTasks(newTasks)
+    }
     
 
     return (
@@ -58,7 +75,7 @@ export const Tasks: React.FC = () => {
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                    <input type="checkbox" id={`task - ${task.id}`} />
+                    <input type="checkbox" id={`task - ${task.id}`} onChange={() => handleToggleTasksStatus(task.id)} />
                     <label htmlFor={`task - ${task.id}`}>{task.title}</label>
                     </li>
                 ))}
