@@ -12,7 +12,7 @@ interface TaskContextData {
     setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
 
-// criando o contexto, normalmemnte compartilhamos um objeto 
+// criando o contexto, normalmemnte compartilhamos um objeto, como passei um estado de , preciso tambem fazer a tipagem. 
 export const TaskContext = createContext({} as TaskContextData);
 
 // tipagem do childreen sempre vai ser REACT.REACTNODE

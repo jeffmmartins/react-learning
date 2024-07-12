@@ -46,16 +46,16 @@ export const Tasks: React.FC = () => {
     // função aplicada no input do checkbox
     // função void é quando ela nao retorna nada , ou seja nao tem um return nela 
     // onchenge ele espera uma funão , por isso apluca função arrow function , para nela o paramentro que queremos passar para a função 
-    const handleToggleTasksStatus = (tasksId: number) => {
+    function handleToggleTasksStatus(tasksId: number) {
         // lógica de alterar o stus
         const newTasks = tasks.map((task)=> {
             if(tasksId === task.id) {
                 return {
                     ...tasks,
-                    done: !task.done
+                    done: !task.done,
                 }
             }
-            return task
+            return task;
         })
         setTasks(newTasks)
     }
@@ -75,8 +75,10 @@ export const Tasks: React.FC = () => {
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                    <input type="checkbox" id={`task - ${task.id}`} onChange={() => handleToggleTasksStatus(task.id)} />
-                    <label htmlFor={`task - ${task.id}`}>{task.title}</label>
+                    <input type="checkbox" id={`task - ${task.id}`} onChange={() => handleToggleTasksStatus(task.id)} 
+                    className={task.done ? style.done : ""}
+                    />
+                    <label htmlFor={`task - ${task.id}`} className={task.done ? style.done : ""}>{task.title}</label>
                     </li>
                 ))}
             </ul>
