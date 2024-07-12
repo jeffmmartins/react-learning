@@ -1,4 +1,4 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import style from "./style.module.scss";
 import { TaskContext } from "../../context/TaskContext";
 
@@ -10,8 +10,8 @@ export const Tasks: React.FC = () => {
     
 
     //para acessar o contexto , dentro tenho que passar qual o contexto que quro acessar 
-    const variavel = useContext(TaskContext)
-    console.log(variavel)
+    const {tasks,setTasks} = useContext(TaskContext)
+   
     /*
         [
             {title: tarefa 1}, done: boolean}
@@ -40,6 +40,7 @@ export const Tasks: React.FC = () => {
         console.log(tasks)
     }
 
+    
     
 
     return (

@@ -1,10 +1,15 @@
-import React, {  createContext,useState,useEffect } from "react";
+import React, {  createContext,useEffect,useState } from "react";
 
 // quando tiver uma array tenho sempre que tipar o array 
 export interface Task {
     title: string;
     done: boolean;
     id: number;
+}
+
+interface TaskContextData {
+    tasks: Task[];
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
 
 // criando o contexto, normalmemnte compartilhamos um objeto 
