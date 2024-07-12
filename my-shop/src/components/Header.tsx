@@ -1,12 +1,12 @@
 import React from "react";
-import { HeaderTitle, StyledHeader } from "./Style";
+import * as S from "./Style"
 
 export const Header: React.FC = () => {
     return(
         <>
-            <StyledHeader>
-                <HeaderTitle>My Shop</HeaderTitle>
-            </StyledHeader>
+            <S.StyledHeader>
+                <S.HeaderTitle>My Shop</S.HeaderTitle>
+            </S.StyledHeader>
         </>
     )
 }
