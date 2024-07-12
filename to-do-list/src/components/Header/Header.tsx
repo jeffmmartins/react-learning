@@ -14,6 +14,8 @@ export const Header: React.FC = () => {
         return total  
     },0)
 
+    const totalDone = totalTasks - totalPending
+
     return (
         <header className={style.header}>
             <div className={style.container}>
@@ -22,9 +24,9 @@ export const Header: React.FC = () => {
                     <span>Bem Vindo, Jefferson</span>
                 </div>
                 <div>
-                    <StatsCard title="teste1" value={5}/>
-                    <StatsCard title="teste2" value={4}/>
-                    <StatsCard title="teste3" value={2}/>
+                    <StatsCard title="Total de Tarefas" value={totalTasks}/>
+                    <StatsCard title="Tarefas Pendentes" value={totalPending}/>
+                    <StatsCard title="Tarefas Concluidas" value={totalDone}/>
                 </div>
             </div>
         </header>
