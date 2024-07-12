@@ -13,7 +13,7 @@ interface TaskContextData {
 }
 
 // criando o contexto, normalmemnte compartilhamos um objeto 
-export const TaskContext = createContext({});
+export const TaskContext = createContext({} as TaskContextData);
 
 // tipagem do childreen sempre vai ser REACT.REACTNODE
 interface TaskProviderProps{

@@ -11,6 +11,7 @@ export const Tasks: React.FC = () => {
 
     //para acessar o contexto , dentro tenho que passar qual o contexto que quro acessar 
     const {tasks,setTasks} = useContext(TaskContext)
+    
    
     /*
         [
