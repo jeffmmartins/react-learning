@@ -14,5 +14,9 @@ export const Review = styled.span``
 
 export const Price = styled.strong``
 
-export const AddToCartButton = styled.button``
+export const AddToCartButton = styled.button`
+display: flex;
+align-items: center;
+gap: 0.5rem;
+`
 
