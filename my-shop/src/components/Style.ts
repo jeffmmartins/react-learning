@@ -17,6 +17,8 @@ height: 60px;
 
 export const HeaderTitle = styled.h1`
 color: white;
+font-size: 1.6rem;
+font-weight: 500;
 `
 
 export const AutButton = styled.button`

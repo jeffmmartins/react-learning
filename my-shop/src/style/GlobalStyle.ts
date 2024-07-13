@@ -11,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 body {
     background-color: #f5f5f5;
 }
+
+body, button, input{
+    font-family: "Poppins", sans-serif;
+}
 `
