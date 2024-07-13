@@ -7,7 +7,7 @@ padding: 0 2rem ;
 
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-items: stretch; // faz com que o card estique e fique com tamanhos igauis 
 flex-wrap: wrap;
 gap: 2rem;
 
