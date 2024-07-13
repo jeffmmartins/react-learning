@@ -1,20 +1,27 @@
 import React from "react";
 import * as S from "./style"
 import { FiShoppingCart } from "react-icons/fi";
+import { Products } from "../../data/products";
+
+// esta recebendo a tipagem que foi atribuida no arquivo Data
+interface ProductCartProps {
+    product: Products
+}
 
 // image -nao preciso fechar a tag , pois na pratica é como se fosse a tag img
-export const ProductCard: React.FC = () => {
+export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
+    console.log(product)
     return (
         <S.Card>
-            <S.Image src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="" />
+            <S.Image src={product.image} alt={product.description} />
             <S.ProductTitle>
-                Mens Casual Slim Fit T-Shirts
+                {product.title}
             </S.ProductTitle>
 
             <S.ReviewPriceContainer>
-                <S.Review>4.1</S.Review>
+                <S.Review>{product.rating.rate}</S.Review>
 
-                <S.Price>$22.30</S.Price>
+                <S.Price>{product.price}</S.Price>
             </S.ReviewPriceContainer>
 
             <S.AddToCartButtonWrapper>

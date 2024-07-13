@@ -1,6 +1,6 @@
 
 import { Header } from "./components/Header"
-import { ProductCard } from "./components/ProductCard/ProductCard"
+import { ProductList } from "./components/ProductsList/ProductList"
 import { GlobalStyle } from "./style/GlobalStyle"
 
 
@@ -10,7 +10,7 @@ function App() {
       
       <Header/>
 
-      <ProductCard/>
+      <ProductList/>
 
       <GlobalStyle/>
     </>
