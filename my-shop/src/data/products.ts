@@ -1,4 +1,16 @@
-export const products = [
+
+// tipando os dados da API
+export interface Products  {
+id: number;
+title: string;
+price: number;
+description: string;
+category: string;
+image: string;
+rating: {rate: number, count: number}
+}
+
+export const products: Products[] = [
     {
       "id": 1,
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
