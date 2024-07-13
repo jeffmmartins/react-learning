@@ -26,6 +26,9 @@ height: 30px;
 padding: 0 2rem;
 background-color: green;
 color: white;
+
+display: flex;
+align-items: center;
 `
 
 export const ButtonWrapper = styled.div`
@@ -40,4 +43,7 @@ height: 30px;
 padding: 0 2rem;
 background-color: violet;
 color: white;
+
+display: flex;
+align-items: center;
 `
