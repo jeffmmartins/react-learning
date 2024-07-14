@@ -1,9 +1,12 @@
 import {FiLogIn, FiLogOut} from "react-icons/fi"
 import { MdShoppingCartCheckout } from "react-icons/md";
+import { useState } from "react";
 import React from "react";
+import { Cart } from "./Cart/Cart";
 import * as S from "./Style"
 
 export const Header: React.FC = () => {
+    const [showCart, setShowCart] = useState(false)
     const isLogged = false;
 
     return (
@@ -20,13 +23,13 @@ export const Header: React.FC = () => {
                             { isLogged ? <FiLogOut/> :   <FiLogIn/>}
                         </S.AutButton>
 
-                        <S.CartButton> 
+                        <S.CartButton onClick={() => setShowCart(!showCart)}> 
                             Carrinho
                             <MdShoppingCartCheckout/>
                         </S.CartButton>
                     </S.ButtonWrapper>
-
                 </S.Wrapper>
+                <Cart showCart={showCart}/>
             </S.StyledHeader>
 
         </>
