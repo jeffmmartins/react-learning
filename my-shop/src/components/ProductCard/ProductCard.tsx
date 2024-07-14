@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./style"
 import { FiShoppingCart } from "react-icons/fi";
 import { Products } from "../../data/products";
-import { AiFillStar} from "react-icons/ai"
+import { AiFillStar, AiOutlineStar} from "react-icons/ai"
 
 // esta recebendo a tipagem que foi atribuida no arquivo Data
 interface ProductCartProps {
@@ -21,8 +21,14 @@ export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
 
             <S.ReviewPriceContainer>
                 <S.Review>
-                    {}
-                    {product.rating.rate}
+                    {Array.from({length:5}).map(
+                        (_,index) => index < Math.round(product.rating.rate)
+                        ? (
+                            <AiFillStar key={index}/>
+                        ) : (
+                            <AiOutlineStar key={index}/>
+                        ))}
+                    ({` ${product.rating.rate}`})
                 </S.Review>
 
                 <S.Price>{product.price}</S.Price>
