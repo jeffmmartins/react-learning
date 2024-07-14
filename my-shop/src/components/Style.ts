@@ -31,7 +31,7 @@ border: none;
 border-radius: 5px;
 height: 30px;
 padding: 0 2rem;
-background-color: ${(props) => props.isLogged ? "red" : "green" };
+background-color: ${props => props.isLogged ? "red" : "green" };
 color: white;
 
 display: flex;

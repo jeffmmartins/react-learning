@@ -13,7 +13,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-    user: null, 
+    user: null,
 }
 
 // Reduce: Guarda o estado  que desejamos compartilhar na aplicação
@@ -21,11 +21,27 @@ const initialState: UserState = {
 
 interface UserAction {
     type: string;
-    payload?: User
+    payload?: User;
 }
 
+// estado do usuario vem no payLoad da action
 // inicializando com nulo. 
 // essa função é que vai alterar o estado 
-export function userReduce(state = initialState, action: UserAction) {
-    
+// no user/login o ideal é começar com nome do reducer + ação que quer tratar.
+// lidar com duas ações , primeira é  a do login e segundo a do logOUt
+// todo reducer precisa retornar o nosso estado atualizado
+export function userReducer(state = initialState, action: UserAction): UserState {
+   if(action.type === 'user/login'){
+    return {
+        ...state,
+        user: action.payload as User,
+    }
+   }else if (action.type === 'user/logout') {
+    return {
+        ...state,
+        user: null,
+    }
+   }
+   
+    return state;
 }
