@@ -1,3 +1,7 @@
+import { useReducer } from "react"
 import { combineReducers } from "redux"
 
-const rootReducer = combineReducers()
+// combinar todos reduces em um so
+export const rootReducer = combineReducers({
+    useReducer: useReducer,
+})
