@@ -1,9 +1,11 @@
-import {FiLogIn} from "react-icons/fi"
+import {FiLogIn, FiLogOut} from "react-icons/fi"
 import { MdShoppingCartCheckout } from "react-icons/md";
 import React from "react";
 import * as S from "./Style"
 
 export const Header: React.FC = () => {
+    const isLogged = false;
+
     return (
         <>
             <S.StyledHeader>
@@ -13,9 +15,9 @@ export const Header: React.FC = () => {
 
                     {/*Envolvendo os button em uma div que foi nomeado de buttonWrapper*/}
                     <S.ButtonWrapper>
-                        <S.AutButton>
-                            Login
-                            <FiLogIn/>
+                        <S.AutButton isLogged={isLogged}>
+                            {isLogged ? "Logout" : "login"}
+                            { isLogged ? <FiLogOut/> :   <FiLogIn/>}
                         </S.AutButton>
 
                         <S.CartButton> 

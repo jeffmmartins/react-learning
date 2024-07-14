@@ -21,12 +21,17 @@ font-size: 1.6rem;
 font-weight: 500;
 `
 
-export const AutButton = styled.button`
+interface AuthButtonProps {
+    isLogged: boolean
+}
+
+// Sempre que tiver propriedades em componentes estilizados usar conforme abaixo.
+export const AutButton = styled.button<AuthButtonProps>`
 border: none;
 border-radius: 5px;
 height: 30px;
 padding: 0 2rem;
-background-color: green;
+background-color: ${(props) => props.isLogged ? "red" : "green" };
 color: white;
 
 display: flex;
