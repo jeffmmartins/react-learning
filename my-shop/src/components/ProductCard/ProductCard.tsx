@@ -11,6 +11,11 @@ interface ProductCartProps {
 
 // image -nao preciso fechar a tag , pois na pratica é como se fosse a tag img
 export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
+
+    const handleAddProductToCart = () => {
+        // despachar uma action. precisa usar o usedispatch
+    } 
+
     console.log(product)
     return (
         <S.Card>
@@ -35,7 +40,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
             </S.ReviewPriceContainer>
 
             <S.AddToCartButtonWrapper>
-                <S.AddToCartButton>
+                <S.AddToCartButton onClick={handleAddProductToCart }>
                     Adicionar Ao Carrinho <FiShoppingCart />
                 </S.AddToCartButton>
             </S.AddToCartButtonWrapper>
