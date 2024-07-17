@@ -26,7 +26,7 @@ export const Cart: React.FC <CartProps> = ({showCart}) => {
                 </S.CartProductList>
 
                 <S.CartTotal>
-                    Total: $ 0,00
+                    Total: ${cartTotal.toFixed(2)}
                 </S.CartTotal>
             </S.Container>
         </>
