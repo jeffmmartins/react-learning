@@ -3,6 +3,7 @@ import * as S from "./style"
 import { FiShoppingCart } from "react-icons/fi";
 import { Products } from "../../data/products";
 import { AiFillStar, AiOutlineStar} from "react-icons/ai"
+import { useDispatch } from "react-redux";
 
 // esta recebendo a tipagem que foi atribuida no arquivo Data
 interface ProductCartProps {
@@ -11,12 +12,19 @@ interface ProductCartProps {
 
 // image -nao preciso fechar a tag , pois na pratica é como se fosse a tag img
 export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
+    
+    const dispatch = useDispatch()
 
     const handleAddProductToCart = () => {
         // despachar uma action. precisa usar o usedispatch
+        // tenho que passar a action.
+        dispatch({
+            type: 'cart/add-product',
+            payload: product,
+        })
     } 
 
-    console.log(product)
+   
     return (
         <S.Card>
             <S.Image src={product.image} alt={product.description} />

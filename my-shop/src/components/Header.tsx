@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
     // passa uma função que vai receber o reducer raiz 
     // selecionando o estado que ta guardando dentro do reducer
     const {user} =  useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
-    console.log(user)
+    
 
     const [showCart, setShowCart] = useState(false)
     const isLogged = user !== null;
