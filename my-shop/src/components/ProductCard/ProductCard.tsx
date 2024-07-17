@@ -30,6 +30,13 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
         })
     }
 
+    const handleRemoveProductFromCart = () => {
+        dispatch({
+            type: 'cart/remove-product',
+            payload: product,
+        })
+    }
+
 
     return (
         <S.Card>
@@ -55,7 +62,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
 
             <S.AddToCartButtonWrapper>
                 {isProductOnCart ?
-                    <S.RemoveFromCartButton >
+                    <S.RemoveFromCartButton onClick={handleRemoveProductFromCart}>
                         Remover do Carrinho  <FiShoppingCart />
                     </S.RemoveFromCartButton> :
                     <S.AddToCartButton onClick={handleAddProductToCart}>
