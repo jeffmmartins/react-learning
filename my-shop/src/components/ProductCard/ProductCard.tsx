@@ -3,7 +3,8 @@ import * as S from "./style"
 import { FiShoppingCart } from "react-icons/fi";
 import { Products } from "../../data/products";
 import { AiFillStar, AiOutlineStar} from "react-icons/ai"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootReducer } from "../../redux/root.reducer";
 
 // esta recebendo a tipagem que foi atribuida no arquivo Data
 interface ProductCartProps {
@@ -12,8 +13,8 @@ interface ProductCartProps {
 
 // image -nao preciso fechar a tag , pois na pratica é como se fosse a tag img
 export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
-    
     const dispatch = useDispatch()
+    const {cart} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
 
     // ao clicar no botão adicionar é despachado a action. que no payload const o produto que foi adicionado 
     const handleAddProductToCart = () => {
