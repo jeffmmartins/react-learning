@@ -22,8 +22,19 @@ transition: right 1s;
 export const Title = styled.h1``
 
 export const CartProductList = styled.ul`
-
+padding: 2rem 0;
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+`
+export const WeigthLetter = styled.strong`
+font-weight: bold;
 `
 export const CartProductItem = styled.li`
+
+`
+
+export const CartTotal = styled.strong`
 
 `
