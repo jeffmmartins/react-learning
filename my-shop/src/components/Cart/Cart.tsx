@@ -7,12 +7,18 @@ interface CartProps {
 }
 export const Cart: React.FC <CartProps> = ({showCart}) => {
     // para pegar os itens que está no carrinho 
-    const {} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
+    const {cart} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
 
     return (
         <>
             <S.Container showCart={showCart}>
                 <S.Title>Carrinho</S.Title>
+
+                <S.CartProductList>
+                    {cart.map((product) => (
+                        <S.CartProductItem key={product.id}>{product.title}</S.CartProductItem>
+                    ))}
+                </S.CartProductList>
             </S.Container>
         </>
     )

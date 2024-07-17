@@ -20,3 +20,10 @@ transition: right 1s;
 `
 
 export const Title = styled.h1``
+
+export const CartProductList = styled.ul`
+
+`
+export const CartProductItem = styled.li`
+
+`
