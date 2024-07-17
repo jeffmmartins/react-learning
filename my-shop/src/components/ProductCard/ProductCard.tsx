@@ -15,6 +15,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
     
     const dispatch = useDispatch()
 
+    // ao clicar no botão adicionar é despachado a action. que no payload const o produto que foi adicionado 
     const handleAddProductToCart = () => {
         // despachar uma action. precisa usar o usedispatch
         // tenho que passar a action.
@@ -51,6 +52,10 @@ export const ProductCard: React.FC<ProductCartProps> = ({product}) => {
                 <S.AddToCartButton onClick={handleAddProductToCart }>
                     Adicionar Ao Carrinho <FiShoppingCart />
                 </S.AddToCartButton>
+
+                <S.RemoveFromCartButton >
+                    Remover do Carrinho  <FiShoppingCart />
+                </S.RemoveFromCartButton>
             </S.AddToCartButtonWrapper>
 
         </S.Card>
