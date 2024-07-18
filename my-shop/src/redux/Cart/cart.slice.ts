@@ -31,3 +31,5 @@ export const CartSlice = createSlice({
         }
     }
 })
+
+export const {addProduct,RemoveProduct} = CartSlice.actions

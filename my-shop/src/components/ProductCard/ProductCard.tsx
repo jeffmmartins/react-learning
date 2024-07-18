@@ -5,6 +5,7 @@ import { Products } from "../../data/products";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../../redux/root.reducer";
+import { addProduct, RemoveProduct } from "../../redux/Cart/cart.slice";
 
 // esta recebendo a tipagem que foi atribuida no arquivo Data
 interface ProductCartProps {
@@ -24,17 +25,11 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
     const handleAddProductToCart = () => {
         // despachar uma action. precisa usar o usedispatch
         // tenho que passar a action.
-        dispatch({
-            type: 'cart/add-product',
-            payload: product,
-        })
+        dispatch(addProduct(product))
     }
 
     const handleRemoveProductFromCart = () => {
-        dispatch({
-            type: 'cart/remove-product',
-            payload: product,
-        })
+        dispatch(RemoveProduct(product))
     }
 
 
