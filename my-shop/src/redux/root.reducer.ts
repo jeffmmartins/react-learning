@@ -1,10 +1,11 @@
 import { combineReducers } from "redux"
-import { userReducer } from "./UserReduce/reduce"
+
 import { cartReducer } from "./Cart/cart-reduce"
+import { userSlice } from "./UserReduce/user-slice"
 
 // combinar todos reduces em um so
 export const rootReducer = combineReducers({
-    userReducer,
+    userReducer: userSlice,
     cartReducer,
 })
 
