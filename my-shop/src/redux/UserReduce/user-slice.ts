@@ -33,3 +33,6 @@ export const userSlice = createSlice({
         }
     }
 })
+
+// exportar as actions 
+export const {login, logout} = userSlice.actions

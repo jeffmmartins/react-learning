@@ -6,6 +6,7 @@ import { Cart } from "./Cart/Cart";
 import * as S from "./Style"
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../redux/root.reducer";
+import { login, logout } from "../redux/UserReduce/user-slice";
 
 export const Header: React.FC = () => {
     //Retornando os dados do usuaio logado
@@ -20,9 +21,16 @@ export const Header: React.FC = () => {
 
     // função responsavel para diespachar
     function handleUserAuth() {
+
+        
         // usuario nao esta logado 
         if (user === null) {
             // despachar a action de login 
+
+            dispatch(login({
+                    nane: 'Jefferson',
+                    email: 'teste1@gmail.com'
+            }))
             dispatch({
                 type: 'user/login',
                 payload: {
@@ -31,9 +39,8 @@ export const Header: React.FC = () => {
                 }
             })
         } else {
-            dispatch({
-                type: 'user/logout'
-            })
+            // espera um payload , porem quando nao tem , basta passar um objeto vazio.
+            dispatch(logout({}))
         }
     }
 

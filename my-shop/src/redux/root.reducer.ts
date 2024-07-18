@@ -5,7 +5,7 @@ import { userSlice } from "./UserReduce/user-slice"
 
 // combinar todos reduces em um so
 export const rootReducer = combineReducers({
-    userReducer: userSlice,
+    userReducer: userSlice.reducer,
     cartReducer,
 })
 
