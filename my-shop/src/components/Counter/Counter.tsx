@@ -1,21 +1,27 @@
-import { useState } from "react"
+import React from 'react';
 
-export const Counter: React.FC = () => {
-    const [counter, setCounter] = useState(0)
-
-    const aumentar = () => {
-        return setCounter(counter + 1)
-    }
-    
-    const diminuir = () => {
-        return setCounter(counter - 1)
-    }
-    return (
-        <>
-        <h1>{counter}</h1>
-
-        <button onClick={aumentar}>Aumentar</button>
-        <button onClick={diminuir}>Diminuir</button>
-        </>
-    )
+interface CounterProps {
+  initialValue: number;
 }
+
+export const Counter: React.FC<CounterProps> = ({ initialValue = 0}) => {
+  const [count, setCount] = React.useState(initialValue);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const diminuir = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={diminuir}>Diminuir</button>
+    </div>
+  );
+};
+
+export default Counter;
