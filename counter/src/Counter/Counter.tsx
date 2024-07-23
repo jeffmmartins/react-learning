@@ -3,11 +3,11 @@ import React, { useState } from "react";
 export const Counter: React.FC = () => {
     const [value, setValue] = useState(0)
 
-    const aumentar = () => {
+    const increment = () => {
         return setValue(value + 1)
     }
 
-    const diminuir = () => {
+    const decrement = () => {
         return setValue(value - 1)
     }
 
@@ -15,8 +15,8 @@ export const Counter: React.FC = () => {
         <>
         <h1>{value}</h1>
 
-        <button onClick={aumentar}>Aumentar</button>
-        <button onClick={diminuir}>Aumentar</button>
+        <button onClick={increment}>Aumentar</button>
+        <button onClick={decrement}>Diminuir</button>
         </>
     )
 }
