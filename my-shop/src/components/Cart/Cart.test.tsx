@@ -8,10 +8,6 @@ jest.mock("react-redux")
 
 describe("Cart > Unit Tests", () => {
     it("Should render an empty cart correctly", () => {
-        render(
-            <Provider store={store}>
-                <Cart showCart={true}/>
-            </Provider>
-        )
+        render(<Cart showCart={true} cart={[]}/>)
     })
 })

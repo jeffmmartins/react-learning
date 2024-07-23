@@ -13,7 +13,8 @@ export const Header: React.FC = () => {
     // passa uma função que vai receber o reducer raiz 
     // selecionando o estado que ta guardando dentro do reducer
     const {user} =  useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
-    
+    // para pegar os itens que está no carrinho 
+    const {cart} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
 
     const [showCart, setShowCart] = useState(false)
     const isLogged = user !== null;
@@ -64,7 +65,7 @@ export const Header: React.FC = () => {
                         </S.CartButton>
                     </S.ButtonWrapper>
                 </S.Wrapper>
-                <Cart showCart={showCart}/>
+                <Cart showCart={showCart} cart={cart}/>
             </S.StyledHeader>
 
         </>

@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux"
 import * as S from "./style"
-import { RootReducer } from "../../redux/root.reducer"
+import { Products } from "../../data/products";
+
 
 interface CartProps {
-    showCart: boolean
+    showCart: boolean;
+    cart: Products[];
 }
-export const Cart: React.FC <CartProps> = ({showCart}) => {
-    // para pegar os itens que está no carrinho 
-    const {cart} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
+export const Cart: React.FC <CartProps> = ({showCart,cart}) => {
+    
 
     const cartTotal = cart.reduce((totalCart, product) => {
         return product.price + totalCart
